@@ -89,4 +89,13 @@ public class Nazione {
         return true;
     }
 
+    public boolean eAlDiSopraDellaMediaComeSuperficie(Nazione[] nazioni) {
+        double sommaSuperfici = 0;
+        for (int i=0; i <nazioni.length; i++) {
+            sommaSuperfici += nazioni[i].getSuperficieKmQ();
+        }
+        double mediaSuperfici = (double) sommaSuperfici / (double) nazioni.length;
+        return (this.superficieKmQ > mediaSuperfici);
+    }
+
 }

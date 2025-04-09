@@ -16,8 +16,9 @@ public class NazioneTester {
 
         Nazione Germany = new Nazione("Germania", 357592, 83000000);
         Nazione Poland = new Nazione("Polonia", 322575,37000000);
-        Nazione Spain = new Nazione("Spagna", 47400000, 505990);
-        Nazione Portugal = new Nazione("Portogallo", 10196709, 92226);
+        Nazione Spain = new Nazione("Spagna", 505990, 47400000);
+        Nazione Portugal = new Nazione("Portogallo", 92226, 10196709);
+
 
         boolean checkPiuEstesa = Italy.piuEstesaDi(France);
         System.out.println("Test metodo piuEstesaDi");
@@ -67,5 +68,13 @@ public class NazioneTester {
         System.out.println("Tutte le nazioni iniziano con la stessa lettera di " + Austria.getDenominazione() + "? " + checkStessaIniziale);
         System.out.println("End.......");
         System.out.println(".......... \n");
+
+        boolean checkSuperficieSopraMedia = France.eAlDiSopraDellaMediaComeSuperficie(elencoNazioni);
+        System.out.println("Test metodo eAlDiSopraDellaMediaComeSuperficie");
+        System.out.println("Start.....");
+        System.out.println(Italy.getDenominazione() + " ha una superficie sopra la media? " + checkSuperficieSopraMedia);
+        System.out.println("End.......");
+        System.out.println(".......... \n");
+
     }
 }
