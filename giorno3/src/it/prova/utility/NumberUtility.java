@@ -20,4 +20,13 @@ public class NumberUtility {
         }
         return arrayRichiesto;
     }
+
+    public static int[] riduciArray (int[] input, int riduzione) {
+        int[] arrayCopia = new int[input.length];
+
+        for (int i= 0; i< input.length; i++) {
+            arrayCopia[i] = input[i] - riduzione;
+        }
+        return arrayCopia;
+    }
 }

@@ -25,8 +25,29 @@ public class NumberUtilityTester {
             System.out.println(numeriRestituiti[i]);
         }
         System.out.println("TEST creaProgressioneNumerica..........End");
-        System.out.println("......................................");
+        System.out.println("...................................... \n");
 
+
+        //TEST riduciArray
+        System.out.println("TEST riduciArray........Start");
+        int[] arrayDaRidurre = {2, 4, 8 ,1 ,9};
+        int[] arrayRidotto = NumberUtility.riduciArray(arrayDaRidurre, 2);
+        System.out.print("L'array ridotto è: ");
+        for (int num : arrayRidotto) {
+            System.out.print(num + " ");
+        }
+
+        System.out.print("\nL'array non ridotto è: ");
+        for (int num : arrayDaRidurre) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+
+
+
+        System.out.println("TEST riduciArray..........End");
+        System.out.println("......................................");
     }
 
 }
