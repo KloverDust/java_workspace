@@ -57,4 +57,14 @@ public class Studente {
         }
         return true;
     }
+
+    public boolean almenoUnoHaLaMediaMiglioreDellaMia(Studente[] corso) {
+        for (Studente s : corso) {
+            if (s.getMediaScolastica() > this.mediaScolastica) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
