@@ -31,12 +31,21 @@ public class StudenteTester {
         Studente s2 = new Studente("Filippo", "Rosa", 16, 23);
         Studente s3 = new Studente("Filippo", "Blu", 19, 21);
         Studente s4 = new Studente("Luca", "Verdi", 17, 24);
+        Studente s5 = new Studente("Luca", "Bombardini", 22, 14);
 
-        Studente[] studentiCorso = {s1, s2, s3, s4};
-        int numeroOmonimiMinorenni = m001.numeroOmonimiMinorenni(studentiCorso);
+
+        Studente[] corsoInglese = {s1, s2, s3, s4, s5};
+        int numeroOmonimiMinorenni = m001.numeroOmonimiMinorenni(corsoInglese);
         System.out.println("Test metodo numeroOmonimiMinorenni");
         System.out.println("Start.....");
         System.out.println("Numero di omonimi minorenni di " + m001.getNome() + ": " + numeroOmonimiMinorenni);
+        System.out.println("End.......");
+        System.out.println(".......... \n");
+
+        int numeroStudentiSufficienti = Studente.contaStudentiConMediaSufficiente(corsoInglese);
+        System.out.println("Test metodo contaStudentiConMediaSufficiente");
+        System.out.println("Start.....");
+        System.out.println("Numero di studenti con media >= 18: " + numeroStudentiSufficienti);
         System.out.println("End.......");
         System.out.println(".......... \n");
     }

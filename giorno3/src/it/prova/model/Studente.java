@@ -77,4 +77,15 @@ public class Studente {
         return counterOmonimi;
     }
 
+    public static int contaStudentiConMediaSufficiente(Studente[] studenti) {
+        int counter = 0;
+        for (Studente s : studenti) {
+            if (s.getMediaScolastica() >= 18) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+
 }
