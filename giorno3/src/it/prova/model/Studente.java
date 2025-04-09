@@ -67,4 +67,14 @@ public class Studente {
         return false;
     }
 
+    public int numeroOmonimiMinorenni(Studente[] studenti) {
+        String mioNome = this.nome;
+        int counterOmonimi =0;
+        for (Studente s: studenti) {
+            if (mioNome.equals(s.getNome()) && s.getEta() <18)
+                counterOmonimi++;
+        }
+        return counterOmonimi;
+    }
+
 }
