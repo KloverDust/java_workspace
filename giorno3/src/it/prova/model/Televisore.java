@@ -112,5 +112,17 @@ public class Televisore {
         float media = somma / (float) catalogo.length;
         return (this.prezzo > media);
     }
+
+    public static Televisore restituisciPiuCostoso(Televisore[] catalogo) {
+        //prezzoMax = catalogo[0].getPrezzo();
+        Televisore tvPiuCostoso = catalogo[0];
+        for (int i = 0; i< catalogo.length; i++) {
+            if (tvPiuCostoso.getPrezzo() < catalogo[i].getPrezzo()) {
+                //prezzoMax = catalogo[i].getPrezzo();
+                tvPiuCostoso = catalogo[i];
+            }
+        }
+        return  tvPiuCostoso;
+    }
 }
 

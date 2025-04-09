@@ -79,6 +79,14 @@ public class TelevisoreTester {
         System.out.println("Il televisore è piu caro della media nel catalogo ? " + televisorePiuCaroDellaMedia);
         System.out.println("End.......");
         System.out.println(".......... \n");
+
+        Televisore televisorePiuCostoso = Televisore.restituisciPiuCostoso(listaTelevisori);
+        System.out.println("Test televisorePiuCostoso");
+        System.out.println("Start.....");
+        System.out.println("Il televisore è piu costoso nel catalogo è " );
+        System.out.println(televisorePiuCostoso.getMarca() + "  " + televisorePiuCostoso.getPrezzo() + "  " + televisorePiuCostoso.getPollici() + "  " + televisorePiuCostoso.getModello() + "  ");
+        System.out.println("End.......");
+        System.out.println(".......... \n");
     }
 
 }
