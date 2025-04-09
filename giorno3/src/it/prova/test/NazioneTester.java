@@ -56,5 +56,16 @@ public class NazioneTester {
         System.out.println("End.......");
         System.out.println(".......... \n");
 
+        Nazione Austria = new Nazione("Austria", 83879, 8900000);
+        Nazione Albania = new Nazione("Albania", 28748, 2800000);
+        Nazione Andorra = new Nazione("Andorra", 468, 77000);
+        Nazione[] nazioniA= new Nazione[] {Austria, Albania, Andorra, France};
+
+        boolean checkStessaIniziale = Austria.hannoTutteLaMiaStessaIniziale(nazioniA);
+        System.out.println("Test metodo hannoTutteLaMiaStessaIniziale");
+        System.out.println("Start.....");
+        System.out.println("Tutte le nazioni iniziano con la stessa lettera di " + Austria.getDenominazione() + "? " + checkStessaIniziale);
+        System.out.println("End.......");
+        System.out.println(".......... \n");
     }
 }

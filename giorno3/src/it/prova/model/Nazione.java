@@ -80,4 +80,13 @@ public class Nazione {
         return true;
     }
 
+    public boolean hannoTutteLaMiaStessaIniziale(Nazione[] nazioni) {
+        char letteraIniziale= this.denominazione.charAt(0);
+        for(int i=0; i< nazioni.length; i++) {
+            if(letteraIniziale != nazioni[i].getDenominazione().charAt(0))
+                return false;
+        }
+        return true;
+    }
+
 }
