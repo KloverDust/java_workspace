@@ -4,7 +4,8 @@ public class Spettatore {
     private String nome;
     private String cognome;
     private String numeroCartaDiCredito;
-    private Biglietto biglietto = new Biglietto();
+    //private Biglietto biglietto = new Biglietto(); SBAGLIATO PERCHE' VA LASCIATO A NULLA, SI AMMETTE LA POSSIBILITA' CHE VENGA ISTANZIATO (CREATO)
+    private Biglietto biglietto;
 
     public Spettatore(String nome, String cognome, String numeroCartaDiCredito, Biglietto biglietto){
         this.nome = nome;

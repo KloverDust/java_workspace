@@ -78,6 +78,7 @@ public class Biglietto {
         return true;
     }
 
+    // Manca il metodo: public boolean eIlPiuCaroTraIBigliettiDeiPaganti(Spettatore[] elencoSpettatoriPaganti)
 
 
 }
