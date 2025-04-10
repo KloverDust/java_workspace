@@ -54,4 +54,14 @@ public class Spettatore {
     public void setBiglietto(Biglietto biglietto) {
         this.biglietto = biglietto;
     }
+
+    public float incassoDeiPagantiNellaMiaFila(Spettatore[] elencoPagantiTotali) {
+        char letteraFila = this.getBiglietto().getLetteraFila();
+        float incassoMiaFila = 0;
+        for (Spettatore s : elencoPagantiTotali) {
+            if (letteraFila == s.getBiglietto().getLetteraFila())
+                incassoMiaFila += s.getBiglietto().getPrezzo();
+        }
+        return (incassoMiaFila + this.getBiglietto().getPrezzo());
+    }
 }
