@@ -110,4 +110,13 @@ public class Raccoglitore {
         }
         return fogliAltaQCounter;
     }
+    // QUEST: VEDERE LE DIFFERENZE E SE CONVIENE UTILIZZARE UNA VERSIONE PIUTTOSTO CHE UN ALTRA
+
+    public boolean stessoColoreENumeroFogliDi(Raccoglitore altroRaccoglitore){
+        String coloreRaccoglitoreCorrente = this.colore;
+        int numeroFogliRaccoglitoreCorrente = this.fogli.length;
+        if(coloreRaccoglitoreCorrente.equals(altroRaccoglitore.getColore()) && numeroFogliRaccoglitoreCorrente == altroRaccoglitore.getFogli().length)
+            return true;
+        return false;
+    }
 }

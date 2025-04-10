@@ -12,7 +12,6 @@ public class RaccoglitoreTester {
         Foglio[] fogli1 = {foglio1, foglio2};
         Raccoglitore raccoglitore = new Raccoglitore("Rosso", 2, fogli1);
 
-        /// //////
         System.out.println(raccoglitore);
 
         raccoglitore.addToFogli(foglio3);
@@ -31,6 +30,7 @@ public class RaccoglitoreTester {
         System.out.println("Esiste almeno un foglio a quadretti? " + esisteAQuadrettiCheck);
         System.out.println("Test esisteAlmenoUnFoglioAQuadretti end");
 
+
         // PREPRAZIONE TEST quantiFogliDiAltaQualita
         Foglio foglioAQRighe = new Foglio("alta", "righe");
         Foglio foglioBQQuadretti = new Foglio("bassa", "quadretti");
@@ -44,5 +44,29 @@ public class RaccoglitoreTester {
         System.out.println("Quanti fogli di alta qualita ci sono in raccoglitoreTest3? " + numeroFogliDiAltaQualita);
         System.out.println("Test quantiFogliDiAltaQualita end");
         // FINE TEST quantiFogliDiAltaQualita
+
+
+        // PREPARAZIONE TEST stessoColoreENumeroFogliDi
+        Foglio foglioAltaRighe = new Foglio("alta", "righe");
+        Foglio foglioBassaQuadretti = new Foglio("bassa", "quadretti");
+        Foglio foglioMediaPentagramma = new Foglio("media", "pentagrammato");
+
+        Foglio[] fogliRaccoglitoreRossoUno = new Foglio[] {foglioAltaRighe, foglioBassaQuadretti, foglioMediaPentagramma};
+        Foglio[] fogliRaccoglitoreRossoDue = new Foglio[] {
+                new Foglio("media", "righe"),
+                new Foglio("alta", "quadretti"),
+                new Foglio("bassa", "pentagrammato")
+        };
+
+        Raccoglitore raccoglitoreRossoUno = new Raccoglitore("rosso", 2, fogliRaccoglitoreRossoUno);
+        Raccoglitore raccoglitoreRossoDue = new Raccoglitore("rosso", 5, fogliRaccoglitoreRossoDue); // stesso colore, stesso numero di fogli
+
+        System.out.println("\nTest stessoColoreENumeroFogliDi start");
+        boolean risultatoTest4 = raccoglitoreRossoUno.stessoColoreENumeroFogliDi(raccoglitoreRossoDue);
+        System.out.println("I raccoglitori rossoOriginale e rossoClone hanno stesso colore e numero di fogli? " + risultatoTest4); // atteso: true
+        System.out.println("Test stessoColoreENumeroFogliDi end");
+        // FINE TEST stessoColoreENumeroFogliDi
+
+
     }
 }
