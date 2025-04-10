@@ -115,6 +115,27 @@ public class PersonaTester {
         System.out.println("TEST quantiMieiOmonimiNellaMiaStessaCitta........End ");
         System.out.println(" .......................................... \n");
 
+        System.out.println("TEST almenoLaMetaAbitanoNellaMiaStessaVia........Start");
+
+        Persona b1 = new Persona("Mario", "Rossi", 30);
+        b1.setIndirizzo(new Indirizzo("Roma", "Via Milano", "1"));
+        Persona b2 = new Persona("Laura", "Bianchi", 25);
+        b2.setIndirizzo(new Indirizzo("Roma", "Via Milano", "2")); // stessa via
+        Persona b3 = new Persona("Luca", "Neri", 40);
+        b3.setIndirizzo(new Indirizzo("Roma", "Via Milano", "3")); // stessa via
+        Persona b4 = new Persona("Anna", "Verdi", 35);
+        b4.setIndirizzo(new Indirizzo("Roma", "Via Roma", "10")); // via diversa
+        Persona b5 = new Persona("Marco", "Blu", 50);
+        b5.setIndirizzo(new Indirizzo("Milano", "Via Milano", "3")); // città diversa
+
+        Persona[] elencoB = new Persona[] {b1, b2, b3, b4, b5};
+
+        boolean risultato = b1.almenoLaMetaAbitanoNellaMiaStessaVia(elencoB);
+        System.out.println("Almeno metà abitano nella stessa via di " + b1.getNome() + "? " + risultato);
+
+        System.out.println("TEST almenoLaMetaAbitanoNellaMiaStessaVia........End");
+        System.out.println(" .......................................... \n");
+
 
 
 

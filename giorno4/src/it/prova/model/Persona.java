@@ -162,6 +162,20 @@ public class Persona {
         return mieiOmonimiCounter;
     }
 
+    public boolean almenoLaMetaAbitanoNellaMiaStessaVia(Persona[] elencoInput){
+        int numeroAbitanti = elencoInput.length;
+        int metaAbitanti = numeroAbitanti/2;
+        int counterPersoneStessaVia =0;
+
+        for(Persona p: elencoInput) {
+            if(p.getIndirizzo().getCitta().equals(this.getIndirizzo().getCitta()) &&
+                    p.getIndirizzo().getVia().equals(this.getIndirizzo().getVia()) &&
+                        p.getIndirizzo().getCivico().equals(this.getIndirizzo().getCivico()))
+                counterPersoneStessaVia++;
+        }
+        return (counterPersoneStessaVia>metaAbitanti);
+    }
+
 
 
 }
