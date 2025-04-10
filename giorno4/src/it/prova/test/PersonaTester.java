@@ -9,17 +9,14 @@ public class PersonaTester {
         Persona p1 = new Persona("Marco", "Rossi", 30);
         Indirizzo indirizzo1 = new Indirizzo("Roma", "Via Mosca", "52");
         p1.setIndirizzo(indirizzo1);
-        System.out.println(p1.getIndirizzo().getCivico());
 
         Persona p2 = new Persona("Luca", "Bianchi", 38);
         Indirizzo indirizzo2 = new Indirizzo("Genova", "Via Mosca", "51");
         p2.setIndirizzo(indirizzo2);
-        System.out.println(p2.getIndirizzo().getCivico());
 
         Persona p3 = new Persona("Michele", "Verdi", 22);
         Indirizzo indirizzo3 = new Indirizzo("Milano", "Via Mosca", "50");
         p3.setIndirizzo(indirizzo3);
-        System.out.println(p3.getIndirizzo().getCivico());
 
         Persona [] elenco = new Persona[] { p2, p3};
 
@@ -44,6 +41,30 @@ public class PersonaTester {
         System.out.println(p1.getNome() +" è il piu piccolo? " + sonoTuttiPiuAnzianiCheck);
         System.out.println("TEST sonoTuttiPiuAnziani........End ");
         System.out.println(" ....................... \n");
+
+        Persona p4 = new Persona("Giulia", "Neri", 27);
+        Indirizzo indirizzo4 = new Indirizzo("Firenze", "Via Roma", "12");
+        p4.setIndirizzo(indirizzo4);
+
+        Persona p5 = new Persona("Alessandro", "Russo", 45);
+        Indirizzo indirizzo5 = new Indirizzo("Firenze", "Via Roma", "12");
+        p5.setIndirizzo(indirizzo5);
+
+        Persona p6 = new Persona("Sara", "Gallo", 33);
+        Indirizzo indirizzo6 = new Indirizzo("Bologna", "Via Indipendenza", "101");
+        p6.setIndirizzo(indirizzo6);
+
+
+        Persona [] persone2 = new Persona[] {p1,p3,p5,p6};
+
+        //TEST quantiCoabitanoNelMioStessoPalazzo
+        System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo........Start ");
+        int quantiCoabitanoNelMioStessoPalazzoCheck = p4.quantiCoabitanoNelMioStessoPalazzo(persone2);
+        System.out.println(p1.getNome() +" coabita nello stesso palazzo con quanti altri? " + quantiCoabitanoNelMioStessoPalazzoCheck);
+        System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo........End ");
+        System.out.println(" ....................... \n");
+
+
     }
 
 }

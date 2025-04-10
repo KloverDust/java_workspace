@@ -75,5 +75,23 @@ public class Persona {
         return true;
     }
 
+    public int quantiCoabitanoNelMioStessoPalazzo(Persona[] elencoInput) {
+       String cittaPersona = this.getIndirizzo().getCitta();
+       String viaPersona = this.getIndirizzo().getVia();
+       String civicoPersona = this.getIndirizzo().getCivico();
+
+       int counterCoabitanti = 0;
+       for (int i=0; i< elencoInput.length; i++) {
+           String cittaIndagato = elencoInput[i].getIndirizzo().getCitta();
+           String viaIndagato = elencoInput[i].getIndirizzo().getVia();
+           String civicoIndagato = elencoInput[i].getIndirizzo().getCivico();
+
+           if (cittaPersona.equals(cittaIndagato) && viaPersona.equals(viaIndagato) && civicoPersona.equals(civicoIndagato))
+               counterCoabitanti++;
+       }
+       return counterCoabitanti;
+
+    }
+
 
 }

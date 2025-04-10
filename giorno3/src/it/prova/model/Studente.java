@@ -4,7 +4,7 @@ public class Studente {
     private String nome;
     private String cognome;
     private int eta;
-    float mediaScolastica;
+    private float mediaScolastica; // E' stata aggiunto private perché altrimenti sarebbe stato di tipo deafult
 
     public Studente() {
 
