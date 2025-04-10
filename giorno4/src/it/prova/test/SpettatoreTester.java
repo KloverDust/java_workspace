@@ -48,6 +48,6 @@ public class SpettatoreTester {
         System.out.println("TEST numeroSpettatoriDelMioStessoSpettacolo........End");
         System.out.println(" ................................................... \n");
 
-
+        //WGKENGPKENBE
     }
 }
