@@ -41,5 +41,13 @@ public class SpettatoreTester {
         System.out.println("TEST incassoDeiPagantiNellaMiaFila........End");
         System.out.println(" .......................................... \n");
 
+        System.out.println("TEST numeroSpettatoriDelMioStessoSpettacolo........Start");
+        Spettatore[] spettatoriStessoSpettacoloTest = new Spettatore[] {spettatoreB2, spettatoreC4, spettatoreA2, spettatoreA3, spettatoreA5};
+        int numeroStessoSpettacolo = spettatoreA2.numeroSpettatoriDelMioStessoSpettacolo(spettatoriStessoSpettacoloTest);
+        System.out.println("Numero di spettatori che assistono allo stesso spettacolo mio "  + spettatoreA2.getBiglietto().getNomeSpettacolo() + numeroStessoSpettacolo);
+        System.out.println("TEST numeroSpettatoriDelMioStessoSpettacolo........End");
+        System.out.println(" ................................................... \n");
+
+
     }
 }

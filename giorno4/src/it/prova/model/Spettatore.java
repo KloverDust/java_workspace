@@ -64,4 +64,14 @@ public class Spettatore {
         }
         return (incassoMiaFila + this.getBiglietto().getPrezzo());
     }
+
+    public int numeroSpettatoriDelMioStessoSpettacolo(Spettatore[] elentoPagantiTotali) {
+        int spettatoriMioStessoSpettacoloCounter = 0;
+        String mioSpettacolo = this.getBiglietto().getNomeSpettacolo();
+        for (Spettatore s: elentoPagantiTotali){
+            if(s.getBiglietto().getNomeSpettacolo().equals(mioSpettacolo))
+                spettatoriMioStessoSpettacoloCounter++;
+        }
+        return spettatoriMioStessoSpettacoloCounter;
+    }
 }
