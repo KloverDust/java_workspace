@@ -102,5 +102,5 @@ public class Pet {
         this.petSitter = petSitter;
     }
 
-    public int minutiPasseggiati
+    //public int minutiPasseggiati
 }
