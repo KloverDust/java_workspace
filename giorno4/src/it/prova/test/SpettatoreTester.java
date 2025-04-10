@@ -20,8 +20,6 @@ public class SpettatoreTester {
         System.out.println("TEST stampaSpettatoreConBiglietto........End");
         System.out.println(" .......................................... \n");
 
-
-
         Biglietto general2 = new Biglietto("La Bella e la Bestia", 'b', 2, 18);
         Spettatore spettatoreB2 = new Spettatore("Laura", "Rossi", "48761234", general2);
         Biglietto general4 = new Biglietto("Frozen", 'c', 4, 15);
@@ -53,6 +51,20 @@ public class SpettatoreTester {
         System.out.println("Il numero di spettatori per lo spettacolo " + spettatoreA2.getBiglietto().getNomeSpettacolo() + " supera l’aspettativa? " + superaAspettativa);
         System.out.println("TEST numeroSpettatoriMioSpettacoloSuperaAspettativa........End");
         System.out.println(" ................................................................\n");
+
+        /// ///////////////////////////////////////////////
+        Spettatore spettatoreSB1 = new Spettatore("Marco", "Rossi", "2357295279");
+        Spettatore spettatoreSB2 = new Spettatore("Mario", "Rossi", "2528511113");
+        Spettatore spettatoreSB3 = new Spettatore("Marco", "Monti", "23975755279");
+        Spettatore[] spettatoriSenzaBiglietto = {spettatoreSB1, spettatoreSB2, spettatoreSB3};
+
+        System.out.println("TEST contaQuantiSenzaBiglietto........Start");
+        int personeSenzaBiglietto = Spettatore.contaQuantiSenzaBiglietto(spettatoriSenzaBiglietto);
+        System.out.println("Il numero di spettatori senza biglietto è " + personeSenzaBiglietto);
+        System.out.println("TEST contaQuantiSenzaBiglietto........End");
+        System.out.println(" ................................................................\n");
+        /// ///////////////////////////////////////////////
+
 
     }
 }

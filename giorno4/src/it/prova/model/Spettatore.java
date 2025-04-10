@@ -79,4 +79,14 @@ public class Spettatore {
         int numeroSpettatoriMioStessoSpettacolo= numeroSpettatoriDelMioStessoSpettacolo(paganti);
         return (numeroSpettatoriMioStessoSpettacolo> aspettativa);
     }
+
+    public static int contaQuantiSenzaBiglietto(Spettatore[] elencoSpettatori) {
+        int counter = 0;
+        for(Spettatore s: elencoSpettatori) {
+            Biglietto b = s.getBiglietto();
+            if (b.getNomeSpettacolo() == null)
+                counter++;
+        }
+        return counter;
+    }
 }
