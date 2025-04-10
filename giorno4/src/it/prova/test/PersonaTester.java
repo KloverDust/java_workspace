@@ -3,6 +3,8 @@ package it.prova.test;
 import it.prova.model.Indirizzo;
 import it.prova.model.Persona;
 
+import static it.prova.model.Persona.listaIndirizziDegliOver60;
+
 
 public class PersonaTester {
     public static void main(String[] args) {
@@ -71,6 +73,32 @@ public class PersonaTester {
         System.out.println("L'indirizzo del nuovo coinquilino adesso è " + indirizzo2.getCitta() + " " + indirizzo2.getVia() + " " + indirizzo2.getCivico());
         System.out.println("TEST assegnaCoinquilino........End ");
         System.out.println(" ....................... \n");
+
+        Persona young1 = new Persona("Sara", "Mattei", 33);
+        Indirizzo indirizzoY1 = new Indirizzo("Bologna", "Via Indipendenza", "101");
+        young1.setIndirizzo(indirizzoY1);
+
+        Persona young2 = new Persona("Cara", "Vigneti", 24);
+        Indirizzo indirizzoY2 = new Indirizzo("Bologna", "Via Indipendenza", "101");
+        young2.setIndirizzo(indirizzoY2);
+
+        Persona old1 = new Persona("Erica", "Anselmi", 66);
+        Indirizzo indirizzoOld1 = new Indirizzo("Bologna", "Via Indipendenza", "101");
+        old1.setIndirizzo(indirizzoOld1);
+
+        Persona[] personeYoungAndOld = new Persona[] {young1, young2, old1};
+
+        //Test listaIndirizziDegliOver60
+        System.out.println("TEST listaIndirizziDegliOver60........Start ");
+        System.out.println("TEST listaIndirizziDegliOver60..........End ");
+        Indirizzo[] indirizziOver60 = listaIndirizziDegliOver60(personeYoungAndOld);
+
+        for (Indirizzo ind : indirizziOver60) {
+            System.out.println("Over60: " + ind.getCitta() + " " + ind.getVia() + " " + ind.getCivico());
+        }
+
+        System.out.println(" .......................................... \n");
+
 
 
 

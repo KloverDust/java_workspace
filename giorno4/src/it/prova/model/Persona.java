@@ -125,4 +125,29 @@ public class Persona {
     // Di conseguenza qualunque modifica a quell'indirizzo avrà ripercursioni per entrambi dato che il loro oggetto indirizzo è condiviso
     // CODE KATA -> FILOSOFIA DI VITA
 
+    public static Indirizzo[] listaIndirizziDegliOver60(Persona[] persone) {
+        int numeroOver60=0;
+        for (Persona persona : persone) {
+            if (persona.getEta() > 60) {
+                numeroOver60++;
+            }
+        }
+
+        Indirizzo[] indirizziOver60 = new Indirizzo[numeroOver60];
+        int j=0;
+        for(int i=0; i<persone.length; i++){
+            if (persone[i].getEta()> 60){
+                //indirizziOver60[j].setCitta(persone[i].getIndirizzo().getCitta()); -> Metodo non proprio corretto perché voglio restituire indirizzi che gia ci sono, non ho bisogno di salvarne copie in memoria
+                //indirizziOver60[j].setVia(persone[i].getIndirizzo().getVia());
+                //indirizziOver60[j].setCivico(persone[i].getIndirizzo().getCivico());
+                indirizziOver60[j]= persone[i].getIndirizzo();
+                j++;
+            }
+
+        }
+        return indirizziOver60;
+    }
+
+
+
 }
