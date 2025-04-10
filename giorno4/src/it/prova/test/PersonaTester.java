@@ -96,8 +96,25 @@ public class PersonaTester {
         for (Indirizzo ind : indirizziOver60) {
             System.out.println("Over60: " + ind.getCitta() + " " + ind.getVia() + " " + ind.getCivico());
         }
-
         System.out.println(" .......................................... \n");
+
+
+        // Test quantiMieiOmonimiNellaMiaStessaCitta
+        System.out.println("TEST quantiMieiOmonimiNellaMiaStessaCitta........Start ");
+
+        Persona a1 = new Persona("Luca", "Bianchi", 25);
+        a1.setIndirizzo(new Indirizzo("Milano", "Via Roma", "10"));
+        Persona a2 = new Persona("Luca", "Verdi", 40); // stesso nome, stessa città
+        a2.setIndirizzo(new Indirizzo("Milano", "Via Milano", "11"));
+        Persona a3 = new Persona("Marco", "Bianchi", 35); // nome diverso
+        a3.setIndirizzo(new Indirizzo("Milano", "Via Roma", "10"));
+        Persona[] elencoOmonimiStessaCitta = new Persona[] {a1, a2, a3};
+
+        int omonimi = a1.quantiMieiOmonimiNellaMiaStessaCitta(elencoOmonimiStessaCitta);
+        System.out.println("Numero di omonimi di " + a1.getNome() + " a " + a1.getIndirizzo().getCitta() + ": " + omonimi);
+        System.out.println("TEST quantiMieiOmonimiNellaMiaStessaCitta........End ");
+        System.out.println(" .......................................... \n");
+
 
 
 

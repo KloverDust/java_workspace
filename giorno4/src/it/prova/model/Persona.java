@@ -148,6 +148,20 @@ public class Persona {
         return indirizziOver60;
     }
 
+    // Ricordare analogia delle stanze per i pezzetti di memoria allocati per i dati
+    // se mi trovo in una stanza e voglio accedere a un dato che si trova nell'altra stanza,
+    // devo bussare (quindi invocare getIstanza) e accedere alle variabili con i rispettivi getter
+
+    public int quantiMieiOmonimiNellaMiaStessaCitta(Persona[] elencoInput){
+        String mioNome = this.nome;
+        int mieiOmonimiCounter = 0;
+        for (Persona p: elencoInput){
+            if(mioNome.equals(p.getNome()) && this.getIndirizzo().getCitta().equals(p.getIndirizzo().getCitta()))
+                mieiOmonimiCounter++;
+        }
+        return mieiOmonimiCounter;
+    }
+
 
 
 }
