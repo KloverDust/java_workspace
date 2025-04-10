@@ -48,4 +48,26 @@ public class Biglietto {
     public void setPrezzo(float prezzo) {
         this.prezzo = prezzo;
     }
+
+    public static Biglietto trovaIlPiuEconomico(Biglietto[] elencoBiglietti){
+        Biglietto bigliettoPiuEconomico = elencoBiglietti[0];
+        for (Biglietto b: elencoBiglietti){
+            if (b.getPrezzo() < bigliettoPiuEconomico.getPrezzo())
+                bigliettoPiuEconomico = b;
+        }
+        return bigliettoPiuEconomico;
+    }
+
+    public boolean bigliettoAncoraInvenduto(Biglietto[] elencoBigliettiVenduti) {
+        for (int i=0; i<elencoBigliettiVenduti.length; i++) {
+            if(this.getNomeSpettacolo().equals(elencoBigliettiVenduti[i].getNomeSpettacolo()) &&
+                this.getPrezzo()== elencoBigliettiVenduti[i].getPrezzo() &&
+                    this.getLetteraFila() == elencoBigliettiVenduti[i].getLetteraFila() &&
+                        this.getNumeroPosto() == elencoBigliettiVenduti[i].getNumeroPosto()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
