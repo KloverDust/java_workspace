@@ -70,6 +70,14 @@ public class Biglietto {
         return true;
     }
 
+    public static boolean sonoTuttiBigliettiPerLoSpettacoloIntitolato(Biglietto[] elencoBiglietti, String titoloSpettacoloDaRicercare){
+        for(Biglietto b: elencoBiglietti) {
+            if (!b.getNomeSpettacolo().equals(titoloSpettacoloDaRicercare))
+                return false;
+        }
+        return true;
+    }
+
 
 
 }

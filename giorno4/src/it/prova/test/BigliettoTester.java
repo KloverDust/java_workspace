@@ -24,5 +24,20 @@ public class BigliettoTester {
         System.out.println("Il biglietto è ancora invenduto? : " + bigliettoInvenduto);
         System.out.println("TEST bigliettoAncoraInvenduto........End");
         System.out.println(" ............................................\n");
+
+        /// ///////////////////////////////////////////////
+        Biglietto[] elencoBigliettiTest = {
+                new Biglietto("Re leone", 'a', 1, 16),
+                new Biglietto("Re leone 2", 'a', 2, 16),
+                new Biglietto("Re leone", 'a', 3, 16)
+        };
+        System.out.println("TEST sonoTuttiBigliettiPerLoSpettacoloIntitolato........Start");
+        boolean tuttiPerReLeone = Biglietto.sonoTuttiBigliettiPerLoSpettacoloIntitolato(elencoBigliettiTest, "Re leone");
+        System.out.println("Tutti i biglietti sono per lo spettacolo 'Re leone'? : " + tuttiPerReLeone);
+        System.out.println("TEST sonoTuttiBigliettiPerLoSpettacoloIntitolato........End");
+        System.out.println(" ................................................................\n");
+        /// ///////////////////////////////////////////////
+
+
     }
 }

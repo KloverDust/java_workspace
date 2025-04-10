@@ -89,4 +89,6 @@ public class Spettatore {
         }
         return counter;
     }
+
+
 }
