@@ -66,5 +66,22 @@ public class SpettatoreTester {
         /// ///////////////////////////////////////////////
 
 
+        /// ///////////////////////////////////////////////
+        System.out.println("TEST contaQuantiNellaMiaStessaFila........Start");
+        Spettatore spettatoreM001 = new Spettatore("Michele", "Bianchi", "48881206", new Biglietto("Re leone", 'a', 1, 16));
+        Spettatore spettatoreM002 = new Spettatore("Francesca", "Gialli", "48900123", new Biglietto("Re leone", 'a', 2, 16));
+        Spettatore spettatoreM003 = new Spettatore("Luca", "Blu", "48673219", new Biglietto("Re leone", 'a', 3, 16));
+        Spettatore spettatoreM004 = new Spettatore("Laura", "Rossi", "48761234", new Biglietto("La Bella e la Bestia", 'b', 1, 18));
+
+        Spettatore[] elenco = {spettatoreM001, spettatoreM002, spettatoreM003, spettatoreM004};
+
+        int quantiNellaStessaFila = spettatoreM002.contaQuantiNellaMiaStessaFila(elenco);
+
+        System.out.println("Numero di spettatori nella stessa fila di " + spettatoreM002.getNome() + ": " + quantiNellaStessaFila);
+        System.out.println("TEST contaQuantiNellaMiaStessaFila........End");
+        System.out.println(" ............................................................\n");
+
+
+
     }
 }

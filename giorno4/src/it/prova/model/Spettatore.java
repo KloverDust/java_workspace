@@ -90,5 +90,18 @@ public class Spettatore {
         return counter;
     }
 
+    public int contaQuantiNellaMiaStessaFila(Spettatore[] elencoSpettatori) {
+        char filaMia = this.getBiglietto().getLetteraFila();
+        int counter = 0;
+        for (Spettatore s: elencoSpettatori) {
+            if (s.getBiglietto().getLetteraFila() == filaMia){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+
+
 
 }
