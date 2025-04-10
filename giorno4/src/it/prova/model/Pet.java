@@ -2,7 +2,7 @@ package it.prova.model;
 
 public class Pet {
     private String animale;
-    private String nome;
+    private String nomeAnimale;
     private String razza;
     private String nomeProprietario;
     private String cognomeProprietario;
@@ -15,6 +15,20 @@ public class Pet {
     public Pet(){
 
     }
+    public Pet (String animale, String nomeAnimale, String nomeProprietario, String cognomeProprietario) {
+        this.animale = animale;
+        this.nomeAnimale = nomeAnimale;
+        this.nomeProprietario = nomeProprietario;
+        this.cognomeProprietario = cognomeProprietario;
+    }
+
+    public Pet (String animale, String nomeAnimale, String nomeProprietario, String cognomeProprietario, String telefonoProprietario) {
+        this.animale = animale;
+        this.nomeAnimale = nomeAnimale;
+        this.nomeProprietario = nomeProprietario;
+        this.cognomeProprietario = cognomeProprietario;
+        this.telefonoProprietario = telefonoProprietario;
+    }
 
     public String getAnimale() {
         return animale;
@@ -24,12 +38,12 @@ public class Pet {
         this.animale = animale;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeAnimale() {
+        return nomeAnimale;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeAnimale(String nomeAnimale) {
+        this.nomeAnimale = nomeAnimale;
     }
 
     public String getRazza() {
@@ -79,4 +93,14 @@ public class Pet {
     public void seteSano(boolean eSano) {
         this.eSano = eSano;
     }
+
+    public PetSitter getPetSitter() {
+        return petSitter;
+    }
+
+    public void setPetSitter(PetSitter petSitter) {
+        this.petSitter = petSitter;
+    }
+
+    public int minutiPasseggiati
 }

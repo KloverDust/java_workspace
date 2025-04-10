@@ -5,7 +5,7 @@ public class PetSitter {
     private String numeroTelefono;
     private int score;
     private float pagaOraria;
-    
+
     public PetSitter(String nomeUtente, String numeroTelefono, int score, float pagaOraria){
         this.nomeUtente = nomeUtente;
         this.numeroTelefono = numeroTelefono;
