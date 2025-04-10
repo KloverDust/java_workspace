@@ -74,4 +74,9 @@ public class Spettatore {
         }
         return spettatoriMioStessoSpettacoloCounter;
     }
+
+    public boolean numeroSpettatoriMioSpettacoloSuperaAspettativa(Spettatore[] paganti, int aspettativa) {
+        int numeroSpettatoriMioStessoSpettacolo= numeroSpettatoriDelMioStessoSpettacolo(paganti);
+        return (numeroSpettatoriMioStessoSpettacolo> aspettativa);
+    }
 }

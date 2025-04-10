@@ -48,6 +48,11 @@ public class SpettatoreTester {
         System.out.println("TEST numeroSpettatoriDelMioStessoSpettacolo........End");
         System.out.println(" ................................................... \n");
 
-        //WGKENGPKENBE
+        System.out.println("TEST numeroSpettatoriMioSpettacoloSuperaAspettativa........Start");
+        boolean superaAspettativa = spettatoreA2.numeroSpettatoriMioSpettacoloSuperaAspettativa(spettatoriStessoSpettacoloTest, 2); // aspettativa = 2
+        System.out.println("Il numero di spettatori per lo spettacolo " + spettatoreA2.getBiglietto().getNomeSpettacolo() + " supera l’aspettativa? " + superaAspettativa);
+        System.out.println("TEST numeroSpettatoriMioSpettacoloSuperaAspettativa........End");
+        System.out.println(" ................................................................\n");
+
     }
 }
