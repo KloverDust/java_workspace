@@ -65,5 +65,15 @@ public class Persona {
 
     }
 
-    
+    public boolean sonoTuttiPiuAnziani(Persona[] elenco){
+        int etaPersona = this.eta;
+        for (int i=0; i< elenco.length; i++) {
+            if (etaPersona > elenco[i].getEta()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 }

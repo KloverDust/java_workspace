@@ -16,7 +16,7 @@ public class PersonaTester {
         p2.setIndirizzo(indirizzo2);
         System.out.println(p2.getIndirizzo().getCivico());
 
-        Persona p3 = new Persona("Marco", "Rossi", 30);
+        Persona p3 = new Persona("Michele", "Verdi", 22);
         Indirizzo indirizzo3 = new Indirizzo("Milano", "Via Mosca", "50");
         p3.setIndirizzo(indirizzo3);
         System.out.println(p3.getIndirizzo().getCivico());
@@ -36,6 +36,13 @@ public class PersonaTester {
         boolean haAlmenoUnConcittadinoCheck = p1.haAlmenoUnConcittadino(elenco);
         System.out.println(p1.getNome() +" ha alemno un concittadino? " + haAlmenoUnConcittadinoCheck);
         System.out.println("TEST haAlmenoUnConcittadino........End ");
+        System.out.println(" ....................... \n");
+
+        //TEST sonoTuttiPiuAnziani
+        System.out.println("TEST sonoTuttiPiuAnziani........Start ");
+        boolean sonoTuttiPiuAnzianiCheck = p1.sonoTuttiPiuAnziani(elenco);
+        System.out.println(p1.getNome() +" è il piu piccolo? " + sonoTuttiPiuAnzianiCheck);
+        System.out.println("TEST sonoTuttiPiuAnziani........End ");
         System.out.println(" ....................... \n");
     }
 
