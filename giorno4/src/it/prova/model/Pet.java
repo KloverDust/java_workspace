@@ -102,5 +102,32 @@ public class Pet {
         this.petSitter = petSitter;
     }
 
-    //public int minutiPasseggiati
+    public String descrizioneCompleta() {
+        String descrizione = this.nomeAnimale + " (" + this.animale + "), di proprietà di "
+                + this.nomeProprietario + " " + this.cognomeProprietario;
+        if (this.petSitter != null) {
+            descrizione += ", è affidato a " + this.petSitter.getNomeUtente();
+        } else {
+            descrizione += ", al momento non ha un pet sitter.";
+        }
+        return descrizione;
+    }
+
+    public boolean haPetSitter() {
+        return this.petSitter != null;
+    }
+
+    public float costoTotaleAffido(int ore) {
+        if (this.petSitter != null) {
+            return ore * this.petSitter.getPagaOraria();
+        } else {
+            return 0f;
+        }
+    }
+
+    public boolean puòEssereAffidato() {
+        return this.eSano && this.petSitter != null;
+    }
+
+
 }

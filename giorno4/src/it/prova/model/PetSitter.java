@@ -49,4 +49,23 @@ public class PetSitter {
         this.pagaOraria = pagaOraria;
     }
 
+    public String descrizione() {
+        return "PetSitter: " + this.nomeUtente + ", tel: " + this.numeroTelefono + ", score: "
+                + this.score + ", paga oraria: " + this.pagaOraria + "€";
+    }
+
+    public void incrementaScore() {
+        this.score++;
+    }
+
+    public boolean eTopSitter() {
+        return this.score >= 8;
+    }
+
+    public float calcolaPaga(int ore) {
+        return this.pagaOraria * ore;
+    }
+
+
+
 }

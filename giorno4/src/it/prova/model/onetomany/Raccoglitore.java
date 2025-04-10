@@ -62,7 +62,7 @@ public class Raccoglitore {
         Foglio[] fogliCompleti = new Foglio[dimensioneFogliEsistenti+1];
 
         for (int i=0; i< dimensioneFogliEsistenti; i++) {
-            fogliCompleti[i] = fogliEsistenti[i];
+            fogliCompleti[i] = fogliEsistenti[i]; //QUEST: Cosa avviene qui? La memoria che era allocata ai fogli in fogliEsistenti rimane ma il collegamento viene spostato per fogliCompleti o si crea una nuova copia in memoria con nuovi indirizzi? Perchè non faccio il set per ciascuna propriertà di foglio?
         }
         fogliCompleti[dimensioneFogliEsistenti] = foglioDaAggiungere;
         this.fogli=fogliCompleti;

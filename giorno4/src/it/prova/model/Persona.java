@@ -140,6 +140,8 @@ public class Persona {
                 //indirizziOver60[j].setCitta(persone[i].getIndirizzo().getCitta()); -> Metodo non proprio corretto perché voglio restituire indirizzi che gia ci sono, non ho bisogno di salvarne copie in memoria
                 //indirizziOver60[j].setVia(persone[i].getIndirizzo().getVia());
                 //indirizziOver60[j].setCivico(persone[i].getIndirizzo().getCivico());
+                //Indirizzo[] indirizziOver60[j] = new Indirizzo();
+                //i
                 indirizziOver60[j]= persone[i].getIndirizzo();
                 j++;
             }
