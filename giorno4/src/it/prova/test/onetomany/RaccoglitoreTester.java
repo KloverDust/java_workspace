@@ -31,6 +31,18 @@ public class RaccoglitoreTester {
         System.out.println("Esiste almeno un foglio a quadretti? " + esisteAQuadrettiCheck);
         System.out.println("Test esisteAlmenoUnFoglioAQuadretti end");
 
+        // PREPRAZIONE TEST quantiFogliDiAltaQualita
+        Foglio foglioAQRighe = new Foglio("alta", "righe");
+        Foglio foglioBQQuadretti = new Foglio("bassa", "quadretti");
+        Foglio foglioMQPentagramma = new Foglio("media", "pentagrammato");
 
+        Foglio[] fogliTest3 = new Foglio[] {foglioAQRighe, foglioBQQuadretti, foglioMQPentagramma, new Foglio("alta", "righe")};
+        Raccoglitore raccoglitoreTest3 = new Raccoglitore("blu", 2, fogliTest3);
+
+        System.out.println("\nTest quantiFogliDiAltaQualita start");
+        int numeroFogliDiAltaQualita = raccoglitoreTest3.quantiFogliDiAltaQualita();
+        System.out.println("Quanti fogli di alta qualita ci sono in raccoglitoreTest3? " + numeroFogliDiAltaQualita);
+        System.out.println("Test quantiFogliDiAltaQualita end");
+        // FINE TEST quantiFogliDiAltaQualita
     }
 }

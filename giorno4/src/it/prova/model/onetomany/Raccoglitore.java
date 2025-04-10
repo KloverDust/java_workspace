@@ -90,4 +90,24 @@ public class Raccoglitore {
         }
         return false;
     }
+
+    // Versione che utilizza this.fogli
+    public int quantiFogliDiAltaQualita(){
+        int fogliAltaQCounter = 0;
+        for (int i=0; i< this.fogli.length; i++) {
+            if(this.fogli[i].getQualita().equals("alta"))
+                fogliAltaQCounter++;
+        }
+        return fogliAltaQCounter;
+    }
+
+    // Versione che utilizza this.getFogli
+    public int quantiFogliDiAltaQualita2(){
+        int fogliAltaQCounter = 0;
+        for (int i=0; i< this.getFogli().length; i++) {
+            if(this.getFogli()[i].getQualita().equals("alta"))
+                fogliAltaQCounter++;
+        }
+        return fogliAltaQCounter;
+    }
 }
