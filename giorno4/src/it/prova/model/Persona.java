@@ -93,5 +93,36 @@ public class Persona {
 
     }
 
+//    public void assegnaCoinquilino(Persona nuovoCoinquilino){
+//        String cittaA = this.getIndirizzo().getCitta();
+//        String viaA = this.getIndirizzo().getVia();
+//        String civicoA = this.getIndirizzo().getCivico();
+//
+//        String cittaCoinq = nuovoCoinquilino.getIndirizzo().getCitta();
+//        String viaCoinq = nuovoCoinquilino.getIndirizzo().getVia();
+//        String civicoCoinq = nuovoCoinquilino.getIndirizzo().getCivico();
+//
+//        if (cittaA.equals(cittaCoinq) && viaA.equals(viaCoinq) && civicoA.equals(civicoCoinq)){
+//            System.out.println("Il coinquilino è già stato assegnato");
+//        } else {
+//            nuovoCoinquilino.setIndirizzo.(Indirizzo indirizzoNuovo{cittA, viaA, civicoA});
+//            this.indirizzo.setCitta();
+//            nuovoCoinquilino.getIndirizzo().setCitta(cittaA);
+//            nuovoCoinquilino.getIndirizzo().setVia(viaA);
+//            nuovoCoinquilino.getCivico().setCivico(cittaA);
+//
+//            System.out.println("Coinquilino assegnato con successo");
+//        }
+//    }
+
+    public void assegnaCoinquilino(Persona nuovoCoinquilino){
+        nuovoCoinquilino.getIndirizzo().setCitta(this.indirizzo.getCitta());
+        nuovoCoinquilino.getIndirizzo().setVia(this.indirizzo.getVia());
+        nuovoCoinquilino.getIndirizzo().setCivico(this.indirizzo.getCivico());
+    }
+
+    // se avessi fatto nuovoCoinquilino.setIndirizzo(this.indirizzo) quello che faccio è assegnare lo stesso puntatore all'oggetto indirizzo al nuovo coinquilino.
+    // Di conseguenza qualunque modifica a quell'indirizzo avrà ripercursioni per entrambi dato che il loro oggetto indirizzo è condiviso
+    // CODE KATA -> FILOSOFIA DI VITA
 
 }

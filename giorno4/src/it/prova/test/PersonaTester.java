@@ -60,9 +60,18 @@ public class PersonaTester {
         //TEST quantiCoabitanoNelMioStessoPalazzo
         System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo........Start ");
         int quantiCoabitanoNelMioStessoPalazzoCheck = p4.quantiCoabitanoNelMioStessoPalazzo(persone2);
-        System.out.println(p1.getNome() +" coabita nello stesso palazzo con quanti altri? " + quantiCoabitanoNelMioStessoPalazzoCheck);
+        System.out.println(p4.getNome() +" coabita nello stesso palazzo con quanti altri? " + quantiCoabitanoNelMioStessoPalazzoCheck);
         System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo........End ");
         System.out.println(" ....................... \n");
+
+        //TEST assegnaCoinquilino
+        System.out.println("TEST assegnaCoinquilino........Start ");
+        p1.assegnaCoinquilino(p2);
+        System.out.println("L'indirizzo del primo coinquilino è " + indirizzo1.getCitta() + " " + indirizzo1.getVia() + " " + indirizzo1.getCivico());
+        System.out.println("L'indirizzo del nuovo coinquilino adesso è " + indirizzo2.getCitta() + " " + indirizzo2.getVia() + " " + indirizzo2.getCivico());
+        System.out.println("TEST assegnaCoinquilino........End ");
+        System.out.println(" ....................... \n");
+
 
 
     }
