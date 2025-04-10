@@ -5,6 +5,17 @@ public class Raccoglitore {
     private int spessore;
     private Foglio[] fogli;
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Raccoglitore [colore=").append(colore).append(", spessore=").append(spessore).append(", fogli=\n");
+        for (Foglio f : fogli) {
+            sb.append(f).append(", \n");
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
     public Raccoglitore() {
 
     }
@@ -71,14 +82,12 @@ public class Raccoglitore {
         return true;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Raccoglitore [colore=").append(colore).append(", spessore=").append(spessore).append(", fogli=\n");
-        for (Foglio f : fogli) {
-            sb.append(f).append(", \n");
+    public boolean esisteAlmenoUnFoglioAQuadretti(){
+        Foglio[] fogliEsistenti = this.getFogli();
+        for(int i=0; i< fogliEsistenti.length; i++) {
+            if (fogliEsistenti[i].getTipologia().equals("quadretti"))
+                return true;
         }
-        sb.append("]");
-        return sb.toString();
+        return false;
     }
 }
