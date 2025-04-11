@@ -10,12 +10,21 @@ public class IterationUtility {
         for(int valore : valori) {
             if( (valore + incremento) %incremento == 0) {
                 arrayModificato[j] = valore + incremento;
-                j++;
+                //j++;
             } else {
                 arrayModificato[j] = 0;
-                j++;
+                //j++;
             }
+            j++;
         }
         return arrayModificato;
+    }
+
+    public static boolean verificaSeMultipliTraLoro(int[] numeriControllo, int[] numeriDaControllare) {
+        for (int i = 0; i< numeriControllo.length; i++) {
+            if (numeriDaControllare[i] % numeriControllo[i] == 0)
+                return true;
+        }
+        return false;
     }
 }
