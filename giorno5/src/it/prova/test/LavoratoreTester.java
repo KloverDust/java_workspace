@@ -8,36 +8,32 @@ public class LavoratoreTester {
     public static void main (String[] args){
 
         // Testing con istanziazione con le classi specifiche
-        Lavoratore AntonioLavoratore = new Lavoratore();
-        Operaio BiagioOperario = new Operaio();
-        Volontario CarloVolontario = new Volontario();
+        Lavoratore antonioLavoratore = new Lavoratore();
+        Operaio biagioOperario = new Operaio("Biagio", "Antonacci", 1200);
+        Volontario carloVolontario = new Volontario("Carlo", "Rossi", "HelpingPaws");
 
         System.out.println("\nSTART TEST 1 .....");
-        System.out.println(AntonioLavoratore.percepisco());
-        System.out.println(BiagioOperario.percepisco());
-        System.out.println(CarloVolontario.percepisco());
+        System.out.println(antonioLavoratore.percepisco());
+        System.out.println(biagioOperario.percepisco());
+        System.out.println("Sono " + carloVolontario.getNome() + " " + carloVolontario.getCognome() + " e percepisco "  + carloVolontario.percepisco());
         System.out.println("END TEST 1 ..... \n");
 
 
-        // Testing con istanziazione con classe del padre ma senza ovveride dei metodi nel figlio
+        // Testing con istanziazione con classe del padre ma senza override dei metodi nel figlio
         System.out.println("\nSTART TEST 2 .....");
-        Lavoratore DamianoOperaio = new Operaio();
-        Lavoratore EmanueleVolontario = new Volontario();
-        System.out.println(DamianoOperaio.percepisco());
-        System.out.println(DamianoOperaio.vivo());
-        System.out.println(EmanueleVolontario.percepisco());
-        System.out.println(EmanueleVolontario.vivo());
+        Lavoratore damianoOperaio = new Operaio("Damiano", "Michelangeli", 1330);
+        Lavoratore emanueleVolontario = new Volontario("Emanuele", "Grimaldi", "4Tigers");
+        System.out.println(damianoOperaio.percepisco());
+        System.out.println(emanueleVolontario.percepisco());
         System.out.println("END TEST 2 ..... \n");
 
         // Testing con istanziazione con classe del padre ma con il override dei metodi nel figlio
-        System.out.println("\nSTART TEST 2 .....");
-        Lavoratore FabianoOperaio = new Operaio();
-        Lavoratore GabrieleVolontario = new Volontario();
-        System.out.println(FabianoOperaio.ilMioHobbyE());
-        System.out.println(FabianoOperaio.vivo());
-        System.out.println(GabrieleVolontario.ilMioHobbyE());
-        System.out.println(GabrieleVolontario.vivo());
-        System.out.println("END TEST 2 ..... \n");
+        System.out.println("\nSTART TEST 3 .....");
+        Lavoratore fabianoOperaio = new Operaio();
+        Lavoratore gabrieleVolontario = new Volontario("Gabriele", "Marconi", "LifeForAll");
+        System.out.println(fabianoOperaio.ilMioHobbyE());
+        System.out.println(gabrieleVolontario.ilMioHobbyE());
+        System.out.println("END TEST 3 ..... \n");
 
     }
 }
