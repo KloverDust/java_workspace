@@ -35,5 +35,6 @@ public class LavoratoreTester {
         System.out.println(gabrieleVolontario.ilMioHobbyE());
         System.out.println("END TEST 3 ..... \n");
 
+
     }
 }

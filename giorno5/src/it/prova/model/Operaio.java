@@ -33,4 +33,13 @@ public class Operaio extends Lavoratore{
     public void setSalario(int salario) {
         this.salario = salario;
     }
+
+    public static int contaQuantiOperai(Lavoratore[] input) {
+        int figliCounter = 0;
+        for(Lavoratore l: input) {
+            if(l instanceof Operaio)
+                figliCounter++;
+        }
+        return figliCounter;
+    }
 }

@@ -16,4 +16,13 @@ public class Volontario extends Lavoratore {
     public String ilMioHobbyE(){
         return ("In quanto volontario il mio hobby è aiutare gli animali");
     }
+
+    public static int contaQuantiVolontari(Lavoratore[] input) {
+        int figliCounter = 0;
+        for(Lavoratore l: input) {
+            if(l instanceof Operaio)
+                figliCounter++;
+        }
+        return figliCounter;
+    }
 }

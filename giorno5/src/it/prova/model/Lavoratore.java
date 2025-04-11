@@ -55,4 +55,28 @@ public class Lavoratore {
     public void setHobby(String hobby) {
         this.hobby = hobby;
     }
+
+    public static int contaQuantiPadri(Lavoratore[] input) {
+        int padriCounter = 0;
+        for(Lavoratore l: input) {
+            if( l instanceof Lavoratore) {
+                padriCounter++;
+            }
+        }
+        return padriCounter;
+    }
+
+    // E' PIU GIUSTO METTERE QUESTI METODI NELLE CLASSI FIGLIE PERCHE' UN PADRE PUO ANCHE NON AVERE MAI FIGLI SU CUI INVOCARE TALE METODO
+    public static int contaQuantiFigli(Lavoratore[] input) {
+        int figliCounter = 0;
+        for(Lavoratore l: input) {
+            if(l instanceof Operaio || l instanceof Volontario)
+                figliCounter++;
+        }
+        return figliCounter;
+    }
+    // NOTE: CHIEDERE SPIEGAZIONE MIGLIORATA
+
+
+
 }
