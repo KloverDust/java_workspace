@@ -27,4 +27,13 @@ public class IterationUtility {
         }
         return false;
     }
+
+    public static int[] prodottoVettoriale (int[] input1, int[] input2) {
+        int[] prodottoVettorialeResult = new int[input1.length];
+
+        for(int i =0; i< input1.length; i++) {
+            prodottoVettorialeResult[i] = input1[i] * input2[i];
+        }
+        return prodottoVettorialeResult;
+    }
 }

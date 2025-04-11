@@ -46,7 +46,17 @@ public class IterationUtilityTester {
         System.out.println(testNumeriProva3);
         System.out.println("------------ \n");
 
+        int[] numeriPV1 = new int[] {1,3,5,7,9};
+        int[] numeriPV2 = new int[] {2,4,6,8,10};
+        int[] risultatoPV = IterationUtility.prodottoVettoriale(numeriPV1, numeriPV2);
 
+        System.out.println("prodottoVettoriale start : \n");
 
+        for(int a : risultatoPV) {
+            System.out.println(a);
+        }
+
+        System.out.println("prodottoVettoriale end : \n");
+        System.out.println("------------ \n");
     }
 }
