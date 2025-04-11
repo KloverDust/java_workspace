@@ -85,5 +85,25 @@ public class IterationUtilityTester {
         System.out.println("\nTest quantiSonoDivisibiliPer start ....");
         System.out.println("Quanti numeri nell'array sono divisibili per " + divisore + "? Risultato: " + risultato);
         System.out.println("Test quantiSonoDivisibiliPer end ....\n");
+
+        // //////////////// TESTING unisciArray
+        int[] arrayA = new int[] {1, 2, 3};
+        int[] arrayB = new int[] {4, 5, 6};
+        int[] arrayUnito = IterationUtility.unisciArray(arrayA, arrayB);
+
+        System.out.println("\nTest unisciArray start ....");
+        System.out.print("Array A: ");
+        for (int a : arrayA)
+            System.out.print(a + " ");
+
+        System.out.print("\nArray B: ");
+        for (int b : arrayB)
+            System.out.print(b + " ");
+
+        System.out.print("\nArray Unito: ");
+        for (int u : arrayUnito)
+            System.out.print(u + " ");
+        System.out.println("\nTest unisciArray end ....\n");
+
     }
 }

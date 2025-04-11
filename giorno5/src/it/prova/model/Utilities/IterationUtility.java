@@ -69,4 +69,22 @@ public class IterationUtility {
         }
         return divisibili;
     }
+
+    public static int[] unisciArray (int[] arrayA, int[] arrayB) {
+        int lunghezzaArrayA = arrayA.length;
+        int lunghezzaArrayB = arrayB.length;
+        int[] arrayUnito = new int[lunghezzaArrayA + lunghezzaArrayB];
+
+        for(int i= 0; i<lunghezzaArrayA+lunghezzaArrayB; i++) {
+            if(i < lunghezzaArrayA ){
+                arrayUnito[i] = arrayA[i];
+            }
+            else {
+                arrayUnito[i] = arrayB[i-lunghezzaArrayA];
+            }
+
+        }
+        return  arrayUnito;
+
+    }
 }
