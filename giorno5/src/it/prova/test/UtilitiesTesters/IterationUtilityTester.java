@@ -4,6 +4,8 @@ import it.prova.model.Utilities.IterationUtility;
 
 public class IterationUtilityTester {
     public static void main (String[] args) {
+
+        /// //////////////// TESTING INCREMENTAOGNIELEMENTO
         int[] arrayNumeri = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
         int[] arrayModificato = IterationUtility.incrementaOgniElemento(arrayNumeri, 4);
 
@@ -25,6 +27,7 @@ public class IterationUtilityTester {
         }
         System.out.println("------------ \n");
 
+        /// //////////////// TESTING VERIFICASEMULTIPLITRALORO
         int[] numeriProva1 = new int[] {1,3,5,7,9};
         int[] numeriProva2 = new int[] {2,4,6,8,10};
         int[] numeriProva3 = new int[] {1,8,12,13,21};
@@ -46,6 +49,7 @@ public class IterationUtilityTester {
         System.out.println(testNumeriProva3);
         System.out.println("------------ \n");
 
+        /// //////////////// TESTING PRODOTTOVETTORIALE
         int[] numeriPV1 = new int[] {1,3,5,7,9};
         int[] numeriPV2 = new int[] {2,4,6,8,10};
         int[] risultatoPV = IterationUtility.prodottoVettoriale(numeriPV1, numeriPV2);
@@ -58,5 +62,13 @@ public class IterationUtilityTester {
 
         System.out.println("prodottoVettoriale end : \n");
         System.out.println("------------ \n");
+
+        /// //////////////// TESTING CALCOLASETANTIDISPARIQUANTIPARI
+        int[] numeriDispariPariCheck = new int[] {2,3,4,5,3};
+        boolean dispariUgualePari = IterationUtility.calcolaSeTantiDispariQuantiPari(numeriDispariPariCheck);
+        System.out.println("\n Test calcolaSeTantiDispariQuantiPari start ....");
+        System.out.println("I numeri disapri e pari nell'array sono uguali in numero? " + dispariUgualePari);
+        System.out.println("Test calcolaSeTantiDispariQuantiPari end ....\n");
+
     }
 }

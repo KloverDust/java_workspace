@@ -36,4 +36,16 @@ public class IterationUtility {
         }
         return prodottoVettorialeResult;
     }
+
+    public static boolean calcolaSeTantiDispariQuantiPari(int[] input) {
+        int pariCounter = 0;
+        int dispariCounter = 0;
+        for (int numero : input) {
+            if (numero % 2 == 0)
+                pariCounter++;
+            else
+                dispariCounter++;
+        }
+        return (pariCounter == dispariCounter);
+    }
 }
