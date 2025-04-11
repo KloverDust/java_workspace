@@ -78,5 +78,12 @@ public class IterationUtilityTester {
         System.out.println("I numeri disapri e pari nell'array sono uguali in numero? " + diffPosPariDispariCheck);
         System.out.println("Test calcolaSeTantiDispariQuantiPari end ....\n");
 
+        // //////////////// TESTING quantiSonoDivisibiliPer
+        int[] valoriTest = new int[] {2, 4, 5, 6, 9, 10, 12};
+        int divisore = 2;
+        int risultato = IterationUtility.quantiSonoDivisibiliPer(valoriTest, divisore);
+        System.out.println("\nTest quantiSonoDivisibiliPer start ....");
+        System.out.println("Quanti numeri nell'array sono divisibili per " + divisore + "? Risultato: " + risultato);
+        System.out.println("Test quantiSonoDivisibiliPer end ....\n");
     }
 }

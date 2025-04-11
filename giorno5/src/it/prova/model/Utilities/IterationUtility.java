@@ -59,4 +59,14 @@ public class IterationUtility {
         }
         return (sommaPari + sommaDispari > 0);
     }
+
+    public static int quantiSonoDivisibiliPer(int[] valori, int divisore) {
+        int divisibili = 0;
+        for(int i = 0; i<valori.length; i++) {
+            if (valori[i] % divisore == 0) {
+                divisibili++;
+            }
+        }
+        return divisibili;
+    }
 }
