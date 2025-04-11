@@ -70,5 +70,13 @@ public class IterationUtilityTester {
         System.out.println("I numeri disapri e pari nell'array sono uguali in numero? " + dispariUgualePari);
         System.out.println("Test calcolaSeTantiDispariQuantiPari end ....\n");
 
+
+        /// //////////////// TESTING verificaSeDifferenzaPosizioniPariConDispariRisultaPositivo
+        int[] diffPosPariDispari = new int[] {-2,3,-4,5,-3,3,-9,2,-4};
+        boolean diffPosPariDispariCheck = IterationUtility.verificaSeDifferenzaPosizioniPariConDispariRisultaPositivo(diffPosPariDispari);
+        System.out.println("\n Test calcolaSeTantiDispariQuantiPari start ....");
+        System.out.println("I numeri disapri e pari nell'array sono uguali in numero? " + diffPosPariDispariCheck);
+        System.out.println("Test calcolaSeTantiDispariQuantiPari end ....\n");
+
     }
 }

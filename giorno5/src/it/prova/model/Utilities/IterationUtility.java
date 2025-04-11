@@ -48,4 +48,15 @@ public class IterationUtility {
         }
         return (pariCounter == dispariCounter);
     }
+
+    public static boolean verificaSeDifferenzaPosizioniPariConDispariRisultaPositivo(int [] input) {
+        int sommaPari = 0;
+        int sommaDispari = 0;
+        for (int i= 0; i< input.length; i++) {
+            if (i%2 ==0) {
+                sommaPari += input[i];
+            } else sommaDispari += input[i];
+        }
+        return (sommaPari + sommaDispari > 0);
+    }
 }
