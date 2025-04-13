@@ -87,4 +87,18 @@ public class IterationUtility {
         return  arrayUnito;
 
     }
+
+    public static String creaStringaAlContrarioConIndice(String input, int tipoIndice) {
+        int lunghezzaInput = input.length();
+        String result = "";
+
+        for(int i=input.length() -1; i>=0; i--){
+            if(tipoIndice % 2 == 0 && i%2 == 0){
+                result += input.charAt(i);
+            } else if (tipoIndice % 2 == 1 && i%2 == 1){
+                result += input.charAt(i);
+            }
+        }
+        return result;
+    }
 }

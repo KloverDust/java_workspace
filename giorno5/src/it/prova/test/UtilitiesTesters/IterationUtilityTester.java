@@ -105,5 +105,17 @@ public class IterationUtilityTester {
             System.out.print(u + " ");
         System.out.println("\nTest unisciArray end ....\n");
 
+        // //////////////// TESTING creaStringaAlContrarioConIndice
+        String inputTest = "ciao";
+        int tipoIndice = 1;
+        String risultatoContrario = IterationUtility.creaStringaAlContrarioConIndice(inputTest, tipoIndice);
+
+        System.out.println("\nTest creaStringaAlContrarioConIndice start ....");
+        System.out.println("Input: " + inputTest);
+        System.out.println("TipoIndice: " + tipoIndice);
+        System.out.println("Risultato: " + risultatoContrario);
+        System.out.println("Test creaStringaAlContrarioConIndice end ....\n");
+
+
     }
 }
