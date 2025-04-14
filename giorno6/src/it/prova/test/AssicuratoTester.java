@@ -5,8 +5,8 @@ import it.prova.model.Assicurato;
 import java.util.ArrayList;
 
 public class AssicuratoTester {
-    public static void main (String[] args) {
-        ArrayList <Assicurato> assicuratiUnipol = new ArrayList<>();
+    public static void main(String[] args) {
+        ArrayList<Assicurato> assicuratiUnipol = new ArrayList<>();
         Assicurato primoAssicurato = new Assicurato("Mario", "Rossi", "MRSS293AJFFJA2992", 250);
         Assicurato secondoAssicurato = new Assicurato("Luca", "Bianchi", "LCBNCH85M01H501Y", 300);
         Assicurato terzoAssicurato = new Assicurato("Giulia", "verdi", "GLVRDI92C50F205Z", 180);
@@ -29,7 +29,7 @@ public class AssicuratoTester {
 
         ArrayList<Assicurato> assicuratiConRataMaggiore = Assicurato.estraiQuelliConRataMaggioreDi(assicuratiUnipol, 300);
         System.out.println("Gli assicurati con rata maggiore di: " + "300" + " sono: ");
-        for (Assicurato assic: assicuratiConRataMaggiore) {
+        for (Assicurato assic : assicuratiConRataMaggiore) {
             System.out.println(assic.getNome() + " " + assic.getCognome());
         }
 
