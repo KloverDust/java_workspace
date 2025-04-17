@@ -13,13 +13,6 @@
       <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/MotociclettaJDBC.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/lib/mysql-connector-j-8.0.33.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/src/it/prova/motociclettajdbs/connection/MyConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/src/it/prova/motociclettajdbs/dao/MotociclettaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/src/it/prova/motociclettajdbs/model/Motocicletta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/src/it/prova/motociclettajdbs/test/TestDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/src/it/prova/motociclettajdbs/test/TestFindAll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/src/it/prova/motociclettajdbs/test/TestFindById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MotociclettaJDBC/src/it/prova/motociclettajdbs/test/TestInsert.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../compiti_settimana1/compiti_settimana1.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../giorno5/giorno5.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../giorno6/giorno6.iml" afterDir="false" />
@@ -27,9 +20,6 @@
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/giorno7.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../lavoratorejdbc/lavoratorejdbc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lavoratorejdbc/src/it/prova/lavoratorejdbc/test/TestContaQuantiLavoratoriConIlCognome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lavoratorejdbc/src/it/prova/lavoratorejdbc/test/TestDeleteByCognome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lavoratorejdbc/src/it/prova/lavoratorejdbc/test/TestFindAllNatiTra.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
