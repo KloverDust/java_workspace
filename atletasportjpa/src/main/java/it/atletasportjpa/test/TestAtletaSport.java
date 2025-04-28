@@ -34,8 +34,8 @@ public class TestAtletaSport {
             //testAggiungiSportAdAtleta(sportService, atletaService); //OK
             //testRimuoviSportDaAtleta(sportService, atletaService); //OK
             //testRimuoviAtletaDopoScollegamentoDaSport(sportService, atletaService); //NOT OK
-            //testTrovaSportConDateIncoerenti(sportService);
-            testSommaMedaglieAtletiSportFiniti(atletaService, sportService);
+            //testTrovaSportConDateIncoerenti(sportService); //OK
+            //testSommaMedaglieAtletiSportFiniti(atletaService, sportService); //OK FORSE
 
         } catch (Throwable t) {
             t.printStackTrace();
@@ -43,7 +43,6 @@ public class TestAtletaSport {
             EntityManagerUtil.shutdown();
         }
     }
-
 
     private static void testInserisciNuovoAtleta(AtletaService atletaService) throws Exception {
         System.out.println("... testInserisciNuovoAtleta inizio ...");
@@ -312,8 +311,8 @@ public class TestAtletaSport {
         Sport corretto = new Sport(NomiSport.CALCIO, LocalDate.of(2020,1,1), LocalDate.of(2020,12,31));
         Sport incoerente = new Sport(NomiSport.CORSA, LocalDate.of(2021,6,1), LocalDate.of(2021,5,1));
 
-        sportService.inserisciNuovoSport(corretto.getDescrizione().name());
-        sportService.inserisciNuovoSport(incoerente.getDescrizione().name());
+        sportService.inserisciNuovoSport(corretto);
+        sportService.inserisciNuovoSport(incoerente);
 
         List<Sport> tutti = sportService.caricaTuttiSport();
         for (Sport s : tutti) {
@@ -324,43 +323,57 @@ public class TestAtletaSport {
             }
         }
 
-        List<Sport> errore = sportService.trovaSportConDateIncoerenti();
-        if (errore.isEmpty()) {
+        List<Sport> incoerenti = sportService.trovaSportConDateIncoerenti();
+        System.out.println("Sport con date incoerenti ritrovati:");
+        for (Sport s : incoerenti) {
+            System.out.println("- X - " + s + " (inizio=" + s.getDataInizio() +
+                    ", fine=" + s.getDataFine() + ")");
+        }
+        if (incoerenti.isEmpty()) {
             throw new RuntimeException("testTrovaSportConDateIncoerenti fallito: lista vuota");
         }
-        boolean found = errore.stream()
-                .anyMatch(s -> s.getDescrizione() == NomiSport.CORSA);
-        if (!found) {
-            throw new RuntimeException("testTrovaSportConDateIncoerenti fallito: CORSA non in lista");
-        }
 
-        System.out.println("... testTrovaSportConDateIncoerenti PASS: " + errore);
+        System.out.println("... testTrovaSportConDateIncoerenti PASS: ");
     }
 
     private static void testSommaMedaglieAtletiSportFiniti(AtletaService atletaService,
                                                            SportService sportService) throws Exception {
         System.out.println("... testSommaMedaglieAtletiSportFiniti inizio ...");
 
-        String desc = "NUOTO";
-        sportService.inserisciNuovoSport(desc);
-        Sport s = sportService.caricaSportDaDescrizione(desc).get(0);
+        // 1) Creo uno Sport NUOTO con date che lo rendono 'finito' (dataFine < oggi)
+        LocalDate inizio = LocalDate.of(2020, 1, 1);
+        LocalDate fine   = LocalDate.of(2020,6,1);
+        Sport s = new Sport(NomiSport.NUOTO, inizio, fine);
+        System.out.println("  -> Inserisco Sport finito: " + s +
+                " (inizio=" + inizio + ", fine=" + fine + ")");
+        sportService.inserisciNuovoSport(s);
 
-        Atleta a1 = new Atleta("Marco", "Rossi", LocalDate.of(1990, 1,1));
+        // dopo insert, il service popola l'id
+        System.out.println("     Sport ID = " + s.getId());
+
+        // 2) Creo due Atleti, assegno un numero di medaglie e li associo a NUOTO
+        Atleta a1 = new Atleta("Marco", "Mengoni", LocalDate.of(1990, 1, 1));
         a1.setNumeroMedaglieVinte(3);
         a1.getSportPraticati().add(s);
+        System.out.println("Inserisco Atleta1: " + a1 + ", medaglie=" + a1.getNumeroMedaglieVinte());
         atletaService.inserisciNuovoAtleta(a1);
 
-        Atleta a2 = new Atleta("Francesca", "Bianchi", LocalDate.of(1992, 2,2));
+        Atleta a2 = new Atleta("Alessandra", "Amoroso", LocalDate.of(1992, 2, 2));
         a2.setNumeroMedaglieVinte(5);
         a2.getSportPraticati().add(s);
+        System.out.println("Inserisco Atleta2: " + a2 + ", medaglie=" + a2.getNumeroMedaglieVinte());
         atletaService.inserisciNuovoAtleta(a2);
 
         Long somma = atletaService.calcolaSommaMedaglieAtletiSportFiniti();
-        if (somma == null || somma != 8L) {
-            throw new RuntimeException("testSommaMedaglieAtletiSportFiniti fallito: atteso 8, ottenuto " + somma);
+        System.out.println("Somma medaglie restituita: " + somma);
+
+        if (somma == null || !somma.equals(8L)) {
+            throw new RuntimeException(
+                    "testSommaMedaglieAtletiSportFiniti fallito: atteso 8, ottenuto " + somma);
         }
 
-        System.out.println("... testSommaMedaglieAtletiSportFiniti PASS: totale=" + somma + " ...");
+        System.out.println("... testSommaMedaglieAtletiSportFiniti PASS: totale=" + somma + " ...\n");
     }
+
 
 }

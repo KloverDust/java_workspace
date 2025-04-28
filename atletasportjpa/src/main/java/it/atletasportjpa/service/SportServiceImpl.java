@@ -77,6 +77,24 @@ public class SportServiceImpl implements SportService{
     }
 
     @Override
+    public void inserisciNuovoSport(Sport sport) throws Exception {
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            sportDAO.setEntityManager(em);
+            sportDAO.insert(sport);
+
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(em);
+        }
+    }
+
+    @Override
     public void aggiornaSport(Long idSport, String descrizione) throws Exception {
         EntityManager em = EntityManagerUtil.getEntityManager();
         try {

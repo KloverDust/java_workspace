@@ -16,6 +16,8 @@ public interface SportService {
 
     public void inserisciNuovoSport(String descrizione) throws Exception;
 
+    public void inserisciNuovoSport(Sport sport) throws Exception;
+
     public void aggiornaSport(Long idSport, String descrizione) throws Exception;
 
     public void rimuoviSport(Long idSport) throws Exception;
