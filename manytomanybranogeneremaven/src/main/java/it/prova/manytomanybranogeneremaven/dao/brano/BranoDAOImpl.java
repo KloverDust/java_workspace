@@ -73,4 +73,19 @@ public class BranoDAOImpl implements BranoDAO {
 		entityManager.createNativeQuery("delete from brano c where c.id = ?1").setParameter(1, idBranoInput).executeUpdate();
 	}
 
+	@Override
+	public List<Brano> findBraniByGeneriDescrizioneLongerThan(int minLength) throws Exception {
+		TypedQuery<Brano> query = entityManager.createQuery(
+				"select distinct b "
+						+ "from Brano b "
+						+ " join b.generi g "
+						+ "where length(g.descrizione) > :minLen",
+				Brano.class
+		);
+		query.setParameter("minLen", minLength);
+		return query.getResultList();
+	}
+
+
+
 }

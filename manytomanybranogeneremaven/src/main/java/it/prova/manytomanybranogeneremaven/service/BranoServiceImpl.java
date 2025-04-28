@@ -275,4 +275,14 @@ public class BranoServiceImpl implements BranoService {
 		}
 	}
 
+	@Override
+	public List<Brano> listBraniByDescrizioneGenereLongerThan(int minLength) throws Exception {
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		try {
+			branoDAO.setEntityManager(em);
+			return branoDAO.findBraniByGeneriDescrizioneLongerThan(minLength);
+		} finally {
+			EntityManagerUtil.closeEntityManager(em);
+		}
+	}
 }

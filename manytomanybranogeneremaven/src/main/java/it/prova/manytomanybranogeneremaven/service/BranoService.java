@@ -31,4 +31,6 @@ public interface BranoService {
 	// per injection
 	public void setBranoDAO(BranoDAO branoDAO);
 
+	List<Brano> listBraniByDescrizioneGenereLongerThan(int minLength) throws Exception;
+
 }

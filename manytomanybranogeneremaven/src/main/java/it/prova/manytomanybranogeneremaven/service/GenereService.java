@@ -1,5 +1,6 @@
 package it.prova.manytomanybranogeneremaven.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import it.prova.manytomanybranogeneremaven.dao.genere.GenereDAO;
@@ -24,5 +25,7 @@ public interface GenereService {
 
 	// per injection
 	public void setGenereDAO(GenereDAO genereDAO);
+
+	List<Genere> listGeneriByBraniPubblicatiBetween(LocalDate startDate, LocalDate endDate) throws Exception;
 
 }

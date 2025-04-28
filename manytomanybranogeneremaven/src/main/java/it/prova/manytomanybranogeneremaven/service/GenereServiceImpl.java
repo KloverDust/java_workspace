@@ -1,5 +1,6 @@
 package it.prova.manytomanybranogeneremaven.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -157,5 +158,17 @@ public class GenereServiceImpl implements GenereService {
 	public void setGenereDAO(GenereDAO genereDAO) {
 		this.genereDAO = genereDAO;
 	}
+
+	@Override
+	public List<Genere> listGeneriByBraniPubblicatiBetween(LocalDate startDate, LocalDate endDate) throws Exception {
+		EntityManager em = EntityManagerUtil.getEntityManager();
+		try {
+			genereDAO.setEntityManager(em);
+			return genereDAO.findGeneriByBraniPubblicatiBetween(startDate, endDate);
+		} finally {
+			EntityManagerUtil.closeEntityManager(em);
+		}
+	}
+
 
 }

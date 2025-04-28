@@ -21,24 +21,22 @@ public class MyTest {
 
 		try {
 
-			System.out.println("In tabella Genere ci sono " + genereServiceInstance.listAll().size() + " elementi.");
-			System.out.println("In tabella Brano ci sono " + branoServiceInstance.listAll().size() + " elementi.");
-			System.out.println(
-					"**************************** inizio batteria di test ********************************************");
-			System.out.println(
-					"*************************************************************************************************");
+			//System.out.println("In tabella Genere ci sono " + genereServiceInstance.listAll().size() + " elementi.");
+			//System.out.println("In tabella Brano ci sono " + branoServiceInstance.listAll().size() + " elementi.");
+			System.out.println("**************************** inizio batteria di test ********************************************");
+			System.out.println("*************************************************************************************************");
 
-			testInserimentoNuovoBrano(branoServiceInstance);
-
-			testModificaECheckDateBrano(branoServiceInstance);
-
-			testInserimentoNuovoGenereERicercaPerDescrizione(genereServiceInstance);
-
-			testCollegaGenereABrano(branoServiceInstance, genereServiceInstance);
-
-			testCreazioneECollegamentoBranoInUnSoloColpo(branoServiceInstance, genereServiceInstance);
-
-			testEstraiListaDescrizioneGeneriAssociateAdUnBrano(branoServiceInstance, genereServiceInstance);
+//			testInserimentoNuovoBrano(branoServiceInstance);
+//
+//			testModificaECheckDateBrano(branoServiceInstance);
+//
+//			testInserimentoNuovoGenereERicercaPerDescrizione(genereServiceInstance);
+//
+//			testCollegaGenereABrano(branoServiceInstance, genereServiceInstance);
+//
+//			testCreazioneECollegamentoBranoInUnSoloColpo(branoServiceInstance, genereServiceInstance);
+//
+//			testEstraiListaDescrizioneGeneriAssociateAdUnBrano(branoServiceInstance, genereServiceInstance);
 
 			// *********************************************************************************
 			// RIMUOVIAMO UN BRANO E VEDIAMO COSA ACCADE AI GENERI
@@ -53,21 +51,22 @@ public class MyTest {
 			// REMOVE...
 			// DISASTRO!!! Perché prova a rimuovere anche i generi collegati!!!
 			// *********************************************************************************
-			testRimozioneBranoECheckGeneri(branoServiceInstance, genereServiceInstance);
+			//testRimozioneBranoECheckGeneri(branoServiceInstance, genereServiceInstance);
 
 			// questo usa direttamente sql nativo che in moltissimi casi risulta la
 			// strategia migliore,
 			// più performante, esente da problemi di query sovrabbondanti
-			testRimozioneBranoECheckGeneriAttraversoNativeSql(branoServiceInstance, genereServiceInstance);
+			//testRimozioneBranoECheckGeneriAttraversoNativeSql(branoServiceInstance, genereServiceInstance);
+
+			//testListaGeneriByDataPubblicazione(branoServiceInstance, genereServiceInstance);
+			//testListaBraniByDescrizioneGenereLunga(branoServiceInstance, genereServiceInstance);
 
 			// TODO: TESTARE TUTTO IL CRUD
 
-			System.out.println(
-					"****************************** fine batteria di test ********************************************");
-			System.out.println(
-					"*************************************************************************************************");
-			System.out.println("In tabella Genere ci sono " + genereServiceInstance.listAll().size() + " elementi.");
-			System.out.println("In tabella Brano ci sono " + branoServiceInstance.listAll().size() + " elementi.");
+			System.out.println("****************************** fine batteria di test ********************************************");
+			System.out.println("*************************************************************************************************");
+			//System.out.println("In tabella Genere ci sono " + genereServiceInstance.listAll().size() + " elementi.");
+			//System.out.println("In tabella Brano ci sono " + branoServiceInstance.listAll().size() + " elementi.");
 
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -315,6 +314,57 @@ public class MyTest {
 					"testRimozioneBranoECheckGeneriAttraversoNativeSql fallito: rimozione non avvenuta ");
 
 		System.out.println(".......testRimozioneBranoECheckGeneriAttraversoNativeSql fine: PASSED.............");
+	}
+
+	private static void testListaGeneriByDataPubblicazione(BranoService bs, GenereService gs) throws Exception {
+		System.out.println("… testListaGeneriByDataPubblicazione inizio …");
+
+		Brano b1 = new Brano("t1", "a1", LocalDate.parse("2021-01-01"));
+		Brano b2 = new Brano("t2", "a2", LocalDate.parse("2022-06-15"));
+		bs.inserisciNuovo(b1);
+		bs.inserisciNuovo(b2);
+
+		Genere gA = new Genere("gA");
+		Genere gB = new Genere("gB");
+		gs.inserisciNuovo(gA);
+		gs.inserisciNuovo(gB);
+		bs.aggiungiGenere(b1, gA);
+		bs.aggiungiGenere(b2, gB);
+
+		//deve ritornare solo gA
+		List<Genere> result = gs.listGeneriByBraniPubblicatiBetween(
+				LocalDate.parse("2021-01-01"),
+				LocalDate.parse("2021-12-31")
+		);
+
+		for(Genere g : result) {
+			System.out.println("Trovati n:" + result.size() + " generi per brani pubblicati nell'intervallo: " + g.getId() + " " + g.getDescrizione());
+		}
+
+		System.out.println("… testListaGeneriByDataPubblicazione PASSED …");
+	}
+
+
+	private static void testListaBraniByDescrizioneGenereLunga(BranoService bs, GenereService gs) throws Exception {
+		System.out.println("… testListaBraniByDescrizioneGenereLunga inizio …");
+
+		Brano b3 = new Brano("tit3", "aut3", LocalDate.parse("2023-03-03"));
+		bs.inserisciNuovo(b3);
+
+		Genere gLong  = new Genere("GenereMoltoLungo");
+		Genere gShort = new Genere("Short");
+		gs.inserisciNuovo(gLong);
+		gs.inserisciNuovo(gShort);
+
+		bs.aggiungiGenere(b3, gLong);
+		bs.aggiungiGenere(b3, gShort);
+
+		List<Brano> brani = bs.listBraniByDescrizioneGenereLongerThan(10);
+		for(Brano b : brani) {
+			System.out.println(b.getId() + " " + b.getTitolo());
+		}
+
+		System.out.println("… testListaBraniByDescrizioneGenereLunga PASSED …");
 	}
 
 }

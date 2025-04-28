@@ -10,5 +10,6 @@ public interface BranoDAO extends IBaseDAO<Brano>{
 	public Brano findByIdFetchingGeneri(Long id) throws Exception;
 	public List<String> loadListaDescrizioneGeneriAssociateAdUnBrano(Long idBranoInput) throws Exception;
 	public void deleteBranoAndUnlinkGeneri(Long idBranoInput) throws Exception;
+	public List<Brano> findBraniByGeneriDescrizioneLongerThan(int minLength) throws Exception;
 
 }
