@@ -24,8 +24,11 @@ public class AppDAOImpl implements AppDAO{
     }
 
     @Override
-    public void update(App o) throws Exception {
-
+    public void update(App input) throws Exception {
+        if (input == null) {
+            throw new Exception("Problema valore in input");
+        }
+        input = entityManager.merge(input);
     }
 
     @Override
@@ -37,8 +40,11 @@ public class AppDAOImpl implements AppDAO{
     }
 
     @Override
-    public void delete(App o) throws Exception {
-
+    public void delete(App input) throws Exception {
+        if (input == null) {
+            throw new Exception("Problema valore in input");
+        }
+        entityManager.remove(entityManager.merge(input));
     }
 
 

@@ -42,12 +42,35 @@ public class SmartphoneServiceImpl implements SmartphoneService{
 
     @Override
     public Smartphone caricaSingoloElementoEagerApps(Long id) throws Exception {
-        return null;
+        // questo è come una connection
+        EntityManager entityManager = EntityManagerUtil.getEntityManager();
+
+        try {
+            smartphoneDAO.setEntityManager(entityManager);
+            return smartphoneDAO.findByIdFetchingApps(id);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(entityManager);
+        }
     }
 
     @Override
     public void aggiorna(Smartphone smartphoneInstance) throws Exception {
-
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            smartphoneDAO.setEntityManager(em);
+            smartphoneDAO.update(smartphoneInstance);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(em);
+        }
     }
 
     @Override
@@ -102,24 +125,95 @@ public class SmartphoneServiceImpl implements SmartphoneService{
         }
     }
 
-
     @Override
-    public void rimuovi(Long idSmartphone) throws Exception {
-
+    public void installaAppEsistenteSuSmartphoneEsistente(Long idSmartphone, Long idApp) throws Exception {
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            smartphoneDAO.setEntityManager(em);
+            smartphoneDAO.installaAppEsistente(idSmartphone, idApp);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(em);
+        }
     }
 
     @Override
-    public void rimuoviMaPrimaScollegaApps(Long idSmartphone) throws Exception {
+    public void disinstallaAppDaSmartphone(Long idSmartphone, Long idApp) throws Exception {
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            smartphoneDAO.setEntityManager(em);
+            smartphoneDAO.disinstallaAppEsistente(idSmartphone, idApp);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(em);
+        }
+    }
 
+
+
+    @Override
+    public void rimuovi(Long idSmartphone) throws Exception {
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            smartphoneDAO.setEntityManager(em);
+            smartphoneDAO.delete(smartphoneDAO.get(idSmartphone));
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(em);
+        }
     }
 
     @Override
     public void aggiungiApp(Smartphone smartphoneInstance, App appInstance) throws Exception {
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            smartphoneDAO.setEntityManager(em);
 
+            smartphoneInstance = em.merge(smartphoneInstance);
+            appInstance = em.merge(appInstance);
+
+            smartphoneInstance.getApps().add(appInstance);
+
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(em);
+        }
     }
 
     @Override
     public void setSmartphoneDAO(SmartphoneDAO smartphoneDAO) {
         this.smartphoneDAO = smartphoneDAO;
+    }
+
+    @Override
+    public void rimuoviMaPrimaScollegaApps(Long idSmartphone) throws Exception {
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            smartphoneDAO.setEntityManager(em);
+            smartphoneDAO.deleteSmartphoneAndUnlinkApps(idSmartphone);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            EntityManagerUtil.closeEntityManager(em);
+        }
     }
 }

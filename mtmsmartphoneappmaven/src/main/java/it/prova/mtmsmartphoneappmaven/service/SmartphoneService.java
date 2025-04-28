@@ -30,4 +30,8 @@ public interface SmartphoneService {
 
     void aggiornaVersioneOS(Smartphone smartphone) throws Exception;
 
+    void installaAppEsistenteSuSmartphoneEsistente(Long idSmartphone, Long idApp) throws Exception;
+
+    void disinstallaAppDaSmartphone(Long idSmartphone, Long idApp) throws Exception;
+
 }

@@ -187,7 +187,7 @@ public class BranoServiceImpl implements BranoService {
 			entityManager.getTransaction().begin();
 
 			// uso l'injection per il dao
-			branoDAO.setEntityManager(entityManager);
+			branoDAO.setEntityManager(entityManager); // Probabilmente inutile in quanto non vengono chiamati metodi di branoDAO
 
 			// 'attacco' alla sessione di hibernate i due oggetti
 			// così jpa capisce che se risulta presente quel brano non deve essere inserito

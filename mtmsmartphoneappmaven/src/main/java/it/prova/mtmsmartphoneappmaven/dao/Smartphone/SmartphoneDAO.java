@@ -7,4 +7,8 @@ public interface SmartphoneDAO extends IBaseDAO<Smartphone> {
 
    public void updateVersioneOS(Long idSmartphone, String nuovaVersioneOS) throws Exception;
    public void updateVersioneOS(Smartphone smartphoneInstance) throws Exception;
+   public void installaAppEsistente(Long idSmartphone, Long idApp) throws Exception;
+   public void disinstallaAppEsistente(Long idSmartphone, Long idApp) throws Exception;
+   public void deleteSmartphoneAndUnlinkApps(Long idSmartphone) throws Exception;
+   public Smartphone findByIdFetchingApps(Long idSmartphone) throws Exception;
 }
