@@ -122,10 +122,7 @@ public class TestSmartphoneApp {
                 + reloaded.getVersione() + ", " + reloaded.getDataUltimoAggiornamento() + "])");
     }
 
-    private static void testDisinstallaAppDaSmartphone(
-            SmartphoneService smartphoneServiceInstance,
-            AppService appServiceInstance) throws Exception {
-
+    private static void testDisinstallaAppDaSmartphone(SmartphoneService smartphoneServiceInstance, AppService appServiceInstance) throws Exception {
         System.out.println(".......testDisinstallaAppDaSmartphone inizio.............");
 
         // 1) Prendo uno smartphone e installo un’app (se non già collegati)
@@ -139,8 +136,7 @@ public class TestSmartphoneApp {
 
         // 3) Ricarico
         Smartphone reloaded = smartphoneServiceInstance.caricaSingoloElementoEagerApps(idPhone);
-        boolean stillLinked = reloaded.getApps().stream()
-                .anyMatch(a -> a.getId().equals(idApp));
+        boolean stillLinked = reloaded.getApps().stream().anyMatch(a -> a.getId().equals(idApp));
 
         if (stillLinked) {
             throw new RuntimeException("testDisinstallaAppDaSmartphone fallito: app ancora presente");
@@ -179,15 +175,11 @@ public class TestSmartphoneApp {
             throw new RuntimeException("testRimozioneCompleta fallito: smartphone ancora presente");
         }
 
-        if (appService.caricaSingoloElemento(idApp1) == null
-                || appService.caricaSingoloElemento(idApp2) == null) {
+        if (appService.caricaSingoloElemento(idApp1) == null || appService.caricaSingoloElemento(idApp2) == null) {
             throw new RuntimeException("testRimozioneCompleta fallito: una o più app cancellate");
         }
 
         System.out.println(".......testRimozioneCompletaSmartphoneAssociatoADueApp fine: PASSED.............");
     }
-
-
-
 
 }
