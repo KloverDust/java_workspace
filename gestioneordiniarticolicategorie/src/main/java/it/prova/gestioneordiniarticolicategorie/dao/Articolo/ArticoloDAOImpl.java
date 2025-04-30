@@ -57,8 +57,8 @@ public class ArticoloDAOImpl implements ArticoloDAO{
         }
 
         for (Categoria c : new HashSet<>(a.getCategorie())) {
-            a.getCategorie().remove(c);
-            c.getArticoli().remove(a);
+            a.getCategorie().remove(c); // Da spostare in ArticoloServiceImpl perché questa logica è di gestione oggetti
+            c.getArticoli().remove(a); // Da spostare in ArticoloServiceImpl
         }
         entityManager.remove(a);
     }
@@ -85,8 +85,6 @@ public class ArticoloDAOImpl implements ArticoloDAO{
                         "SELECT a FROM Articolo a " + " WHERE a.ordine.dataSpedizione > a.ordine.dataScadenza", Articolo.class)
                 .getResultList();
     }
-
-
 
 
 }

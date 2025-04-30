@@ -77,10 +77,8 @@ public class TestArticoloCategorie {
 
         Articolo trovato = risultati.get(0);
         if (!trovato.getId().equals(aRit.getId())) {
-            throw new RuntimeException("Fallito: atteso articolo id="
-                    + aRit.getId() + " ma ottenuto id=" + trovato.getId());
+            throw new RuntimeException("Fallito: atteso articolo id=" + aRit.getId() + " ma ottenuto id=" + trovato.getId());
         }
-
         System.out.println("testArticoliSpeditiOltreScadenza: PASSED");
     }
 

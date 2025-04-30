@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65ac59cb-0142-4165-9b0b-f8317465557d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestioneordiniarticolicategorie/dao/Articolo/ArticoloDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestioneordiniarticolicategorie/dao/Articolo/ArticoloDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestioneordiniarticolicategorie/dao/Categoria/CategoriaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestioneordiniarticolicategorie/dao/Categoria/CategoriaDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestioneordiniarticolicategorie/test/TestArticoloCategorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestioneordiniarticolicategorie/test/TestArticoloCategorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../municipioabitantejpa" beforeDir="false" afterPath="$PROJECT_DIR$/../municipioabitantejpa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patterndaosemplificato" beforeDir="false" afterPath="$PROJECT_DIR$/../patterndaosemplificato" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patterndaosemplificatowithservices" beforeDir="false" afterPath="$PROJECT_DIR$/../patterndaosemplificatowithservices" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "KloverDust"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/KloverDust/java_workspace.git",
+    "accountId": "9c963d5a-90a5-4736-811b-a4e2d68aa2d6"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2wRLt1PmR51ZOddTrqXKw9ux5ET" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65ac59cb-0142-4165-9b0b-f8317465557d" name="Changes" comment="" />
+      <created>1745999652157</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745999652157</updated>
+    </task>
+    <servers />
+  </component>
+</project>

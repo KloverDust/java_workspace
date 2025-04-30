@@ -56,8 +56,9 @@ public class CategoriaDAOImpl implements CategoriaDAO{
             throw new Exception("Categoria non trovata: " + idCategoria);
         }
         for (Articolo a : new HashSet<>(c.getArticoli())) {
-            c.getArticoli().remove(a);
-            a.getCategorie().remove(c);
+            c.getArticoli().remove(a); // Da spostare in CategoriaServiceImpl
+            a.getCategorie().remove(c); // Da spostare in CategoriaServiceImpl
+            //Qui non si mette la logica oggetti, solo le query JPQL,
         }
         entityManager.remove(c);
     }
